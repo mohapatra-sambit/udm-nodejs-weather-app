@@ -5,16 +5,33 @@ const forecast = (latitude, longitude, callback) => {
     request({
         url,
         json: true
-    }, (error, { body: { error: err, current: { weather_descriptions, temperature, feelslike } } }) => {
+    }, (error, {
+        body: {
+            error: err,
+            current: {
+                weather_descriptions,
+                temperature,
+                feelslike,
+                humidity
+            },
+            location: {
+                localtime
+            }
+        }
+    }
+    ) => {
         if (error) {
             callback('Unable to connect to Weather Stack.', undefined)
         } else if (err) {
             callback('Invalid input. Please check and try again.', undefined)
         } else {
+            // console.log(current)
             callback(undefined, {
                 description: weather_descriptions[0],
-                temperature: temperature,
-                feelsLike: feelslike
+                temperature,
+                feelslike,
+                humidity,
+                localtime
             })
         }
     })

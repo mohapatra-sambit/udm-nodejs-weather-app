@@ -9,13 +9,15 @@
 <body>
     <div class="main-content">
         {{>header}}
-        <form>
+        <form id="input-form">
             <input placeholder="Enter a location here..." />
             <button>Get Forecast</button>
             
             <p id="error"></p>
             <p id="location"></p>
+            <p id="localtime"></p>
             <p id="forecast"></p>
+            <p id="humidity"></p>
             <p id="message"></p>
         </form>
     </div>
