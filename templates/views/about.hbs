@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/img/weather.png">
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+        <table class="about-table">
+            <tr>
+                <td colspan="2"><img src="/img/me.jpg"/></td>
+            </tr>
+            <tr>
+                <td class="sub-content-title">Name: </td>
+                <td class="sub-content">{{name}}</td>
+            </tr>
+            <tr>
+                <td class="sub-content-title">Mobile: </td>
+                <td class="sub-content">{{mobile}}</td>
+            </tr>
+            <tr>
+                <td class="sub-content-title">Email: </td>
+                <td class="sub-content">{{email}}</td>
+            </tr>
+            <tr>
+                <td class="sub-content-title">Address: </td>
+                <td class="sub-content">{{address}}</td>
+            </tr>
+        </table>
+    </div>
+    {{>footer}}
+</body>
+
+</html>
